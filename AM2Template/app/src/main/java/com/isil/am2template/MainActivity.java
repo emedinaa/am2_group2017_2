@@ -2,6 +2,7 @@ package com.isil.am2template;
 
 import android.animation.Animator;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewAnimationUtils;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageViewIsil;
     private TextView textViewHello;
     private View constraintLayoutContainer;
+    private Snackbar snackbar;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +29,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //updateText();
-                rippleEffect();
+                //rippleEffect();
+                showMessage();
             }
         });
     }
 
+    private void showMessage(){
+        snackbar.setText("Hello Android");
+        snackbar.show();
+    }
     private void rippleEffect() {
 
         int cx = (imageViewIsil.getLeft() + imageViewIsil.getRight()) / 2;
@@ -55,5 +62,7 @@ public class MainActivity extends AppCompatActivity {
         constraintLayoutContainer= findViewById(R.id.constraintLayoutContainer);
         imageViewIsil= (ImageView) findViewById(R.id.imageViewIsil);
         textViewHello= (TextView) findViewById(R.id.textViewHello);
+
+        snackbar= Snackbar.make(constraintLayoutContainer,"",Snackbar.LENGTH_LONG);
     }
 }
