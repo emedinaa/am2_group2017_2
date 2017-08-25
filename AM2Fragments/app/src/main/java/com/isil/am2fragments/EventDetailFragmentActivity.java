@@ -18,6 +18,9 @@ public class EventDetailFragmentActivity extends AppCompatActivity implements My
     public void fragmentAction(Object object) {}
 
     @Override
+    public void goToEventDetail(Object object) {}
+
+    @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;

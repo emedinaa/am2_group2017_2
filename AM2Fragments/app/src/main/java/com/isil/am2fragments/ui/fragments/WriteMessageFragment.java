@@ -2,29 +2,29 @@ package com.isil.am2fragments.ui.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.EditText;
 
+import com.isil.am2fragments.MainMessageActivity;
 import com.isil.am2fragments.R;
-import com.isil.am2fragments.model.StarWarsEvent;
-import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {EventDetailsFragment.OnFragmentInteractionListener} interface
+ * interface
  * to handle interaction events.
- * Use the {@link EventDetailsFragment#newInstance} factory method to
+ * Use the {@link WriteMessageFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EventDetailsFragment extends Fragment {
+public class WriteMessageFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private final String TAG="CONSOLE";
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -32,16 +32,10 @@ public class EventDetailsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private MyFragmentListener mListener;
-
-    private ImageView imageViewEvent;
-    private TextView textViewEvent;
-
-    private StarWarsEvent starWarsEvent;
-
-    public EventDetailsFragment() {
-        // Required empty public constructor
-    }
+    private MessageListener mListener;
+    private EditText eteMessage;
+    private Button btnSend;
+    private String message;
 
     /**
      * Use this factory method to create a new instance of
@@ -49,16 +43,20 @@ public class EventDetailsFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment EventDetailsFragment.
+     * @return A new instance of fragment WriteMessageFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static EventDetailsFragment newInstance(String param1, String param2) {
-        EventDetailsFragment fragment = new EventDetailsFragment();
+    public static WriteMessageFragment newInstance(String param1, String param2) {
+        WriteMessageFragment fragment = new WriteMessageFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    public WriteMessageFragment() {
+        // Required empty public constructor
     }
 
     @Override
@@ -74,17 +72,16 @@ public class EventDetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_event_details, container, false);
-        ui(view);
-        return view;
+        return inflater.inflate(R.layout.fragment_write_message, container, false);
     }
 
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof MyFragmentListener) {
-            mListener = (MyFragmentListener) context;
+
+        if (context instanceof MessageListener) {
+            mListener = (MessageListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -97,36 +94,36 @@ public class EventDetailsFragment extends Fragment {
         mListener = null;
     }
 
-    private void ui(View view) {
-        imageViewEvent= (ImageView)view.findViewById(R.id.imageViewEvent);
-        textViewEvent= (TextView)view.findViewById(R.id.textViewEvent);
-        //((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        extras();
-        populate();
+
+        eteMessage= (EditText)getView().findViewById(R.id.eteMessage);
+        btnSend= (Button)getView().findViewById(R.id.btnSend);
+
+        //TODO events...
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                message= eteMessage.getText().toString();
+                Log.v(TAG, "1 message " + message);
+
+                if(mListener!=null)
+                {
+                    mListener.recibiryEnviardesdeFragment(message);
+                }
+            }
+        });
+
+        //btnSend.setOnClickListener(onClickListener);
     }
 
-
-    private void extras() {
-        if(getActivity().getIntent()!=null && getActivity().getIntent().getExtras()!=null){
-            starWarsEvent= (StarWarsEvent) getActivity().getIntent().getExtras().getParcelable("EVENT");
+    private View.OnClickListener onClickListener= new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            message= eteMessage.getText().toString();
+            Log.v(TAG, "1. message " + message);
+            ((MainMessageActivity)getActivity()).recibiryEnviarMensaje(message);
         }
-    }
-
-    private void populate() {
-        if(starWarsEvent!=null){
-            textViewEvent.setText(starWarsEvent.getTitle());
-            Picasso.with(imageViewEvent.getContext()).load(starWarsEvent.getPhoto()).into(
-                    imageViewEvent);
-        }
-    }
-
-    public void showEventInfo(StarWarsEvent starWarsEvent){
-        this.starWarsEvent= starWarsEvent;
-        populate();
-    }
+    };
 }

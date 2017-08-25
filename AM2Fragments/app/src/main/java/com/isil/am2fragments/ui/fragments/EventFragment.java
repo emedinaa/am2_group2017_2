@@ -94,7 +94,10 @@ public class EventFragment extends Fragment {
             public void onClick(View view, int position) {
                 if(events!=null){
                     StarWarsEvent starWarsEvent= events.get(position);
-                    gotoDetails(starWarsEvent);
+                    //gotoDetails(starWarsEvent);
+                    if(mListener!=null){
+                        mListener.goToEventDetail(starWarsEvent);
+                    }
                 }
             }
 
