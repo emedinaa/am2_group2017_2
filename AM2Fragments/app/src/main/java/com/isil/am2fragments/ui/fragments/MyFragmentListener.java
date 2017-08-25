@@ -7,4 +7,8 @@ package com.isil.am2fragments.ui.fragments;
 public interface MyFragmentListener {
 
     void fragmentAction(Object object);
+
+    void goToEventDetail(Object object);
+
+
 }
