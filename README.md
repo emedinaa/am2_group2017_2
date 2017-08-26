@@ -86,15 +86,19 @@ En este proyecto contamos con varias actividades
 ```
 
 - MainMessageActivity (appMessage)
+
 <img src="./images/screenshotmessage.png" height="480">
 
 - MainActivity (app)
+
 <img src="./images/screenshot1.png" height="480"> <img src="./images/screenshot2.png" height="480">
 
 - MainFragmentActivity (appFragment)
+
 <img src="./images/screenshot1.png" height="480"> <img src="./images/screenshot2.png" height="480">
 
 - MainTabletActivity (appTablet)
+
 <img src="./images/screenshottablet.png" height="480">
 
 ### [5] Aprender más
