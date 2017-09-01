@@ -95,16 +95,20 @@ En este proyecto contamos con varias actividades
   Run / Run App
 ```
 
-- MainMessageActivity (appMessage)
+- MainMessageActivity
+
 <img src="./images/screenshotmessage.png" height="480">
 
 - StarWarsEventsActivity
+
 <img src="./images/screenshot1.png" height="480"> <img src="./images/screenshot2.png" height="480">
 
 - StarWarsEventsFragmentActivity
+
 <img src="./images/screenshot1.png" height="480"> <img src="./images/screenshot2.png" height="480">
 
 - StarWarsEventsTabletActivity
+
 <img src="./images/screenshottablet.png" height="480">
 
 ### [6] Explorando los Fragments
@@ -122,7 +126,7 @@ En este proyecto contamos con varias actividades
 <img src="./images/Fragments-communication-2.jpg" height="480">
 
 - Comunicación entre Fragments
- 
+
 <img src="./images/Fragments-communication-3.jpg" height="480">
 
 ### [7] Aprender más
