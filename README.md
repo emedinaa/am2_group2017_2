@@ -115,15 +115,15 @@ En este proyecto contamos con varias actividades
 
 - Fragments y Actividades
 
-<img src="./images/Fragments.jpg" height="480">
+<img src="./images/fragments_basic.jpg" height="480">
 
 - Comunicación entre Actividades y Fragments
 
-<img src="./images/Fragments-communication1.jpg" height="480">
+<img src="./images/fragments-communication-01.jpg" height="480">
 
 - Comunicación entre Fragments y Actividades
 
-<img src="./images/Fragments-communication-2.jpg" height="480">
+<img src="./images/fragments-communication-02.jpg" height="480">
 
 - Comunicación entre Fragments
 
