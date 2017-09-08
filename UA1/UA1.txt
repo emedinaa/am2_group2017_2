@@ -1,0 +1,14 @@
+ISIL - 2017-2
+
+Curso de Aplicaciones Móviles
+
+Unidad de Aprendizaje I 
+
+Realizar la siguiente funcionalidad usando fragments
+
+1. El formulario debe ser un fragment
+2. El footer con los colores debe ser un fragment
+3. Si seleccionas editar, te debe permitir ingresar los campos : Name, Description, URL
+4. Si seleccionas un color , debe pintar el fondo del formulario con el color seleccionad.
+
+Happy coding !
