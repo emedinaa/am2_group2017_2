@@ -1,13 +1,19 @@
 package com.isil.am2template.fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.isil.am2template.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,7 +29,10 @@ public class ColorFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private ColorFragmentListener listener;
+    private String[] colors={"#6fb8c5","#6b70ec","#dc6e70","#b1429f","#e3ab72"};
+    private List<View> buttons;
+    private int option=0;
 
     public ColorFragment() {
         // Required empty public constructor
@@ -60,7 +69,66 @@ public class ColorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_color, container, false);
+        View view= inflater.inflate(R.layout.fragment_color, container, false);
+        buttons= new ArrayList<>();
+        buttons.add(view.findViewById(R.id.button1));
+        buttons.add(view.findViewById(R.id.button2));
+        buttons.add(view.findViewById(R.id.button3));
+        buttons.add(view.findViewById(R.id.button4));
+        buttons.add(view.findViewById(R.id.button5));
+        return view;
     }
 
+    private void goToOptions(View view){
+        option=optionsbyView(view);
+        Log.d("CONSOLE","option "+option);
+
+        if(listener!=null){
+            //listener.selectedColor(colors[option]);
+            listener.selectedOptionColor(option);
+        }
+    }
+
+    int  optionsbyView(View view) {
+        option=0;
+        switch (view.getId()){
+            case R.id.button1:
+                option=0;
+                break;
+            case R.id.button2:
+                option=1;
+                break;
+            case R.id.button3:
+                option=2;
+                break;
+            case R.id.button4:
+                option=3;
+                break;
+            case R.id.button5:
+                option=4;
+                break;
+        }
+
+        return option;
+    }
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        for (View view:buttons) {
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    goToOptions(view);
+                }
+            });
+        }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if(context instanceof ColorFragmentListener){
+            listener= (ColorFragmentListener)context;
+        }
+    }
 }
