@@ -114,11 +114,39 @@ public class ColorFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
         for (View view:buttons) {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    goToOptions(view);
+                    //goToOptions(view);
+                    //Log.d("CONSOLE", "view "+view.getId());
+                    option=0;
+                    switch (view.getId()){
+                        case R.id.button1:
+                            option=0;
+                            break;
+                        case R.id.button2:
+                            option=1;
+                            break;
+                        case R.id.button3:
+                            option=2;
+                            break;
+                        case R.id.button4:
+                            option=3;
+                            break;
+                        case R.id.button5:
+                            option=4;
+                            break;
+                    }
+                    Log.d("CONSOLE", "ColorFrag option "+option);
+                    String mColor= colors[option];
+                    Log.d("CONSOLE", "ColorFrag color "+mColor);
+
+                    if(listener!=null){
+                        //listener.selectedColor(mColor);
+                        listener.selectedOptionColor(option);
+                    }
                 }
             });
         }

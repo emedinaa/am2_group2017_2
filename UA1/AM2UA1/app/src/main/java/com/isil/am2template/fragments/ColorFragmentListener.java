@@ -11,4 +11,6 @@ public interface ColorFragmentListener {
     void selectedOptionColor(int option);
 
     boolean isProfileEnabled();
+
+    void clear();
 }
