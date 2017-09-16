@@ -50,10 +50,15 @@ public class ProfileActivity extends AppCompatActivity implements
 
     @Override
     public void selectedOptionColor(int option) {
-        Log.d("CONSOLE","option "+option);
-        if(isProfileEnabled()){
+        Log.d("CONSOLE","ProfileActivity option "+option);
+        Log.d("CONSOLE","ProfileActivity editEnabled "+profileFragment.isEditEnabled());
+        //profileFragment.paintBackgroundByOption(option);
+        if(profileFragment.isEditEnabled()){
             profileFragment.paintBackgroundByOption(option);
         }
+        /*if(isProfileEnabled()){
+            profileFragment.paintBackgroundByOption(option);
+        }*/
     }
 
     @Override
@@ -63,5 +68,8 @@ public class ProfileActivity extends AppCompatActivity implements
         }
         return false;
     }
+
+    @Override
+    public void clear() {}
     /**/
 }
