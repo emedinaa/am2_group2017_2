@@ -30,8 +30,10 @@ public class NoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_note);
 
         init();
-
         //populate();
+        //CRUDOperations opDB= new CRUDOperations(new MyDatabase(this));
+        //Listar notas
+        //Log.d("CONSOLE", "notas :\n"+opDB.getAllNotes());
         loadData();
     }
 
@@ -73,6 +75,7 @@ public class NoteActivity extends AppCompatActivity {
     private void loadData() {
         crudOperations= new CRUDOperations(new MyDatabase(this));
         lsNoteEntities= crudOperations.getAllNotes();
+
         noteAdapter= new NoteAdapter(this,lsNoteEntities);
         lstNotes.setAdapter(noteAdapter);
 
@@ -87,6 +90,8 @@ public class NoteActivity extends AppCompatActivity {
         crudOperations.addNote(new NoteEntity("Cuarta Nota","Esta es la cuarta nota ",null));
         crudOperations.addNote(new NoteEntity("Quinta Nota","Esta es la quinta nota ",null));
         crudOperations.addNote(new NoteEntity("Sexta Nota","Esta es la sexta nota ",null));
+        crudOperations.addNote(new NoteEntity("7 Nota","Esta es la sexta nota ",null));
+        crudOperations.addNote(new NoteEntity("8 Nota","Esta es la sexta nota ",null));
 
         Log.v(TAG, "populate " + crudOperations.getAllNotes());
     }
