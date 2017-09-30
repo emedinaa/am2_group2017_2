@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 saveValue();
+                showMessage("Save successful!");
             }
         });
 
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 clearSession();
+                showMessage("Cleaned session !");
+
             }
         });
 
@@ -73,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void showMessage(String message){
+        if(message==null)return;
+        snackbar.setText(message);
+        snackbar.show();
+    }
     private void showMessage(){
         snackbar.setText("Hello Android");
         snackbar.show();
