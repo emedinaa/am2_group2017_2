@@ -1,7 +1,7 @@
 package com.isil.am2template;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,7 +9,6 @@ import android.widget.ListView;
 
 import com.isil.am2template.adapters.NoteAdapter;
 import com.isil.am2template.model.entity.NoteEntity;
-import com.isil.am2template.storage.PreferencesHelper;
 import com.isil.am2template.storage.db.CRUDOperations;
 import com.isil.am2template.storage.db.MyDatabase;
 
@@ -41,21 +40,6 @@ public class NoteActivity extends AppCompatActivity {
 
         lstNotes= (ListView)(findViewById(R.id.lstNotes));
 
-        //user Info
-        String username = PreferencesHelper.getUserSession(this);
-        if(username!=null)
-        {
-            //tviUser.setText("Bienvenido "+ StringUtils.firstCapitalize(username));
-        }
-
-        //events
-        /*btnAddNote.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                gotoNote(ACTION_ADD, null);
-            }
-        });*/
-
         lstNotes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -64,12 +48,6 @@ public class NoteActivity extends AppCompatActivity {
             }
         });
 
-        /*tviLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                logout();
-            }
-        });*/
     }
 
     private void loadData() {
