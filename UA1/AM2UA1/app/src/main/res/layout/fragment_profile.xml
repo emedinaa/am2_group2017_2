@@ -1,0 +1,112 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.isil.am2template.fragments.ProfileFragment"
+    android:background="#6fb8c5"
+    android:id="@+id/frameLayoutForm">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_profile"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="10dp"
+                    android:id="@+id/imageViewProfile"/>
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_edit"
+                    android:textAllCaps="false"
+                    android:text="@string/edit"
+                    android:layout_marginLeft="-40dp"
+                    android:layout_marginTop="-60dp"
+                    android:padding="12dp"
+                    android:textStyle="bold"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toRightOf="@+id/imageViewProfile"
+                    android:layout_toEndOf="@+id/imageViewProfile"
+                    android:id="@+id/textViewEdit"/>
+            </RelativeLayout>
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"
+                android:text="@string/name"/>
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white"
+                android:padding="10dp"
+                android:hint="Escribe tu nombre"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape_text"
+                android:id="@+id/editTextViewName"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"
+                android:text="@string/desc" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white"
+                android:gravity="top"
+                android:minHeight="80dp"
+                android:padding="10dp"
+                android:inputType="text"
+                android:hint="Escribe una descripción"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape_text"
+                android:id="@+id/editTextViewDesc"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"
+                android:text="@string/url"/>
+
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white"
+                android:padding="10dp"
+                android:hint="http://google.com.pe"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape_text"
+                android:id="@+id/editTextViewURL"/>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/viewBlocker"/>
+
+
+</FrameLayout>
