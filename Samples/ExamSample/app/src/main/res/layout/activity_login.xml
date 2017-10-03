@@ -4,62 +4,57 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="#0693DA">
+    android:background="@color/colorBackgroundEasy">
     <ImageView
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:adjustViewBounds="true"
-        android:src="@drawable/ic_notepad128"
+        android:src="@mipmap/ic_easy_logo2"
         android:layout_alignParentTop="true"
         android:id="@+id/iviLogo" />
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_centerInParent="true">
-        <EditText
-            android:layout_width="fill_parent"
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
             android:hint="Email"
-            android:id="@+id/eteUsername"
+            android:textColor="@color/white"
+            android:textColorHint="@color/colorGrayEasy"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="169dp" />
+            android:layout_marginTop="169dp"
+            android:id="@+id/eteUsername"/>
 
-        <EditText
+        <android.support.v7.widget.AppCompatEditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint="Password"
             android:ems="10"
-            android:id="@+id/etePassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/colorGrayEasy"
             android:layout_marginBottom="10dp"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:id="@+id/etePassword"/>
 
         <Button
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:background="#D5EDED"
-            android:text="Ingresar"
+            android:background="@color/colorEasy"
+            android:text="LOGIN"
             android:id="@+id/btnLogin"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="10dp" />
 
-        <Button
-            android:id="@+id/btnRegister"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:background="#D5EDED"
-            android:text="Registrar"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="40dp" />
     </LinearLayout>
 
 </RelativeLayout>

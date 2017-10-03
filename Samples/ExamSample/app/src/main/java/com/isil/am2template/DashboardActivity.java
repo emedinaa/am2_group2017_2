@@ -12,11 +12,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.isil.am2template.fragments.CourseFragment;
-import com.isil.am2template.fragments.ProfileFragment;
+import com.isil.am2template.fragments.FavoritePlaceFragment;
+import com.isil.am2template.fragments.MyPinFragment;
 import com.isil.am2template.listeners.OnNavListener;
 
 public class DashboardActivity extends AppCompatActivity implements OnNavListener {
+
+    private final int MENU_FAVORITE= 103;
+    private final int MENU_MY_PIN= 101;
+    private final int MENU_EXIT= 104;
 
     private Toolbar toolbar;
     private NavigationView navigationView;
@@ -54,21 +58,31 @@ public class DashboardActivity extends AppCompatActivity implements OnNavListene
 
 
                     //Replacing the main content with ContentFragment Which is our Inbox View;
-                    case R.id.menuAndroid:
-                        changeFragment(0);
+                    case R.id.menuPin:
+                        changeFragment(MENU_MY_PIN);
                         return true;
 
-                    // For rest of the options we just show a toast on click
-
-                    case R.id.menuAndroidBug:
+                    case R.id.menuCard:
                         //Toast.makeText(getApplicationContext(),"Stared Selected",Toast.LENGTH_SHORT).show();
-                        changeFragment(1);
+                        //changeFragment(1);
                         return true;
-                    case R.id.menuAndroidHelp:
-                        //Toast.makeText(getApplicationContext(),"Send Selected",Toast.LENGTH_SHORT).show();
-                        changeFragment(2);
+                    case R.id.menuTravel:
                         return true;
 
+                    case R.id.menuFavorite:
+                        //Toast.makeText(getApplicationContext(),"Send Selected",Toast.LENGTH_SHORT).show();
+                        changeFragment(MENU_FAVORITE);
+                        return true;
+                    case R.id.menuNews:
+                        //Toast.makeText(getApplicationContext(),"Send Selected",Toast.LENGTH_SHORT).show();
+                        //changeFragment(2);
+                        return true;
+
+                    case R.id.menuExit:
+                        //Toast.makeText(getApplicationContext(),"Send Selected",Toast.LENGTH_SHORT).show();
+                        //changeFragment(2);
+                        changeFragment(MENU_EXIT);
+                        return true;
                     default:
                         return true;
 
@@ -108,13 +122,13 @@ public class DashboardActivity extends AppCompatActivity implements OnNavListene
     private void changeFragment(int i) {
         Fragment fragment = null;
         switch (i) {
-            case 0:
-                fragment = new CourseFragment();
+            case MENU_MY_PIN:
+                fragment = new MyPinFragment();
                 break;
-            case 1:
-                fragment = new ProfileFragment();
+            case MENU_FAVORITE:
+                fragment = new FavoritePlaceFragment();
                 break;
-            case 2:
+            case MENU_EXIT:
                 logout();
                 return;
         }
@@ -126,6 +140,7 @@ public class DashboardActivity extends AppCompatActivity implements OnNavListene
     }
 
     private void logout() {
+        //clear session
         startActivity(new Intent(this, LoginActivity.class));
         finish();
     }

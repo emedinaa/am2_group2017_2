@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private Button btnLogin,btnRegister;
+    private Button btnLogin;
     private EditText eteUsername;
     private EditText etePassword;
     private String username;
@@ -29,7 +29,6 @@ public class LoginActivity extends AppCompatActivity {
         eteUsername=(EditText)findViewById(R.id.eteUsername);
         etePassword=(EditText)findViewById(R.id.etePassword);
         btnLogin=(Button)findViewById(R.id.btnLogin);
-        btnRegister=(Button)findViewById(R.id.btnRegister);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,22 +38,13 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoUserRegister();
-            }
-        });
     }
 
-    private void gotoUserRegister() {
-
-    }
 
     private void gotoMain() {
-
         Intent intent= new Intent(this,DashboardActivity.class);
         startActivity(intent);
+        finish();
     }
 
     private boolean validateForm() {

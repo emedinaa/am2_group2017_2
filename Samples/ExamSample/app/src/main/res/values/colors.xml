@@ -9,4 +9,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorEasy">#FBB139</color>
+    <color name="colorBackgroundEasy">#303030</color>
+    <color name="colorGrayEasy">#BBBBBB</color>
 </resources>

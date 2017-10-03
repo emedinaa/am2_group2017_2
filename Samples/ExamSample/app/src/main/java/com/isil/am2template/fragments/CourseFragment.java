@@ -70,8 +70,6 @@ public class CourseFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_course, container, false);
     }
 
-
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);

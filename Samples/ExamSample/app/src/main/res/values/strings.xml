@@ -19,4 +19,11 @@
     <string name="openDrawer">Navigation View Closed</string>
 
     <string name="my_note">My Notes</string>
+
+    <string name="nav_pin">Mi PIN : XXX</string>
+    <string name="nav_cards">Mis tarjetas</string>
+    <string name="nav_travel_history">Historial de viajes</string>
+    <string name="nav_favorite">Lugares favoritos</string>
+    <string name="nav_news">Noticias</string>
+    <string name="nav_exit">Salir</string>
 </resources>
