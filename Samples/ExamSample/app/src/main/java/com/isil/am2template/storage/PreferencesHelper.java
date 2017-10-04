@@ -22,6 +22,13 @@ public class PreferencesHelper {
         editor.apply();
     }
 
+    public static void saveSession(Context context, String username)
+    {
+        SharedPreferences.Editor editor = getEditor(context);
+        editor.putString(PREFERENCES_USERNAME, username);
+        editor.apply();
+    }
+
     public static void saveSession(Context context, String username, String password)
     {
         SharedPreferences.Editor editor = getEditor(context);
