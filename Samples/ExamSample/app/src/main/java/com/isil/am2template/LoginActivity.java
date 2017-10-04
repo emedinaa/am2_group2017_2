@@ -49,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void saveSession() {
-        //PreferencesHelper.saveSession(this,username);
         PreferencesHelper.saveSession(this, username, password);
     }
 

@@ -19,9 +19,9 @@ import com.isil.am2template.storage.PreferencesHelper;
 
 public class DashboardActivity extends AppCompatActivity implements OnNavListener {
 
-    private final int MENU_FAVORITE= 103;
-    private final int MENU_MY_PIN= 101;
-    private final int MENU_EXIT= 104;
+    private final int MENU_FAVORITE = 103;
+    private final int MENU_MY_PIN = 101;
+    private final int MENU_EXIT = 104;
 
     private Toolbar toolbar;
     private NavigationView navigationView;
@@ -140,12 +140,11 @@ public class DashboardActivity extends AppCompatActivity implements OnNavListene
         }
     }
 
-    private void clearSession(){
+    private void clearSession() {
         PreferencesHelper.signOut(this);
     }
 
     private void logout() {
-        //clear session
         clearSession();
         startActivity(new Intent(this, LoginActivity.class));
         finish();

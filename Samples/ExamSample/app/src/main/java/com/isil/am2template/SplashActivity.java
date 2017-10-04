@@ -19,8 +19,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        TimerTask task = new TimerTask()
-        {
+        TimerTask task = new TimerTask() {
             @Override
             public void run() {
                 validateSession();
@@ -33,11 +32,10 @@ public class SplashActivity extends AppCompatActivity {
 
     private void validateSession() {
         Intent intent;
-        boolean session= PreferencesHelper.isSignedIn(SplashActivity.this);
-        if(session)
-        {
-            intent=new Intent(this, DashboardActivity.class);
-        }else {
+        boolean session = PreferencesHelper.isSignedIn(SplashActivity.this);
+        if (session) {
+            intent = new Intent(this, DashboardActivity.class);
+        } else {
             intent = new Intent(this, LoginActivity.class);
         }
         startActivity(intent);
