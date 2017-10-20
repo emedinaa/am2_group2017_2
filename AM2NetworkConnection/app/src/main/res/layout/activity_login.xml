@@ -59,5 +59,5 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="40dp" />
     </LinearLayout>
-
+<include layout="@layout/layout_loading"/>
 </RelativeLayout>
