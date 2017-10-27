@@ -197,5 +197,18 @@ La url base es :
 		    ]
 		}
 	```
+## Referencias
 
-*** Semana 10 - Viernes 20 de Octubre ***
+ - Principios S.O.L.I.D https://academy.realm.io/posts/learning-path-solid-principles-for-android/
+ 
+ - Android Architecture Blueprints https://github.com/googlesamples/android-architecture
+ 
+ - MVP Pattern (Microsoft) https://msdn.microsoft.com/en-us/library/ff649571.aspx
+ 
+ - GUI Architectures (Martin Fowler) https://martinfowler.com/eaaDev/uiArchs.html
+ 
+ - MVC, MVP , MVVM (Realm) https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/
+ 
+ 
+ 
+*** Semana 10 - Viernes 27 de Octubre ***
