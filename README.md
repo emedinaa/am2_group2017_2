@@ -11,19 +11,19 @@ Curso de Aplicaciones Móviles 2 - Grupo 2017 02
 
 ## Conexión Remota
 
-	- Seguiremos viendo el crud , ahora consumiendo servicios RestFul con Json
+- Seguiremos viendo el crud , ahora consumiendo servicios RestFul con Json
 	
 ## Patrones y Arquitectura de aplicaciones móviles
 
-	- Explicaremos un poco de las diferentes opciones de patrones y arquitecturas para el desarrollo de aplicaciones móviles.
+- Explicaremos un poco de las diferentes opciones de patrones y arquitecturas para el desarrollo de aplicaciones móviles.
 	
-	- Usaremos el patrón Model View Presenter (MVP)
+- Usaremos el patrón Model View Presenter (MVP)
 	
 ## Unidad de Aprendizaje 3
 
-	- Daremos la unidad de aprendizaje basada en avances de sus proyecto.
+- Daremos la unidad de aprendizaje basada en avances de sus proyecto.
 	
-	- Se abarcará los temas de persistencia de datos y conexión remota.
+- Se abarcará los temas de persistencia de datos y conexión remota.
 	
 ## Referencias
 
@@ -37,6 +37,7 @@ Curso de Aplicaciones Móviles 2 - Grupo 2017 02
  
  - MVC, MVP , MVVM (Realm) https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/
  
- 
+
+
  
 *** Semana 11 - Viernes 27 de Octubre ***
