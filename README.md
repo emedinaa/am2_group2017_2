@@ -25,18 +25,27 @@ Curso de Aplicaciones Móviles 2 - Grupo 2017 02
 
 	Google Maps API
 
-    - Configuración
-        1. Crear un proyecto en [Google Console API](https://console.developers.google.com/)
-        ![1](../images/gm1.png)
-        2. Agregamos el API de Google Maps Android API V2.
-        ![2](../images/gm2.png)
-        3. Luego creamos las credenciales para nuestro proyecto Android.
-         ![3](../images/gm3.png)
-        4. Agregamos una clave de API de Android y lo guardamos.
-         ![4](../images/gm4.png)
+- Configuración
 
-    - Proyecto Android
-        1. Agregamos la dependencia de Google Play services
+        1. Crear un proyecto en Google Console API https://console.developers.google.com/
+
+        <img src="../images/gm1.png" height="480">
+
+        2. Agregamos el API de Google Maps Android API V2.
+
+        <img src="../images/gm2.png" height="480">
+
+        3. Luego creamos las credenciales para nuestro proyecto Android.
+
+        <img src="../images/gm3.png" height="480">
+
+        4. Agregamos una clave de API de Android y lo guardamos.
+       	
+       	<img src="../images/gm4.png" height="480">
+
+- Proyecto Android
+
+    1. Agregamos la dependencia de Google Play services
 
         ```
         dependencies {
@@ -46,10 +55,13 @@ Curso de Aplicaciones Móviles 2 - Grupo 2017 02
         }
         ```
 
-        2. Configuración del AndroidManifest
-            Permisos requeridos
-            Habilitar OpenGL
-            Metadata requerida para google play services y google maps
+    2. Configuración del AndroidManifest
+
+            * Permisos requeridos
+
+            * Habilitar OpenGL
+
+            * Metadata requerida para google play services y google maps
 
         ```
             <permission
@@ -79,7 +91,7 @@ Curso de Aplicaciones Móviles 2 - Grupo 2017 02
                 android:value="@string/gmaps_key" />
         ```
 
-        3. Agregar al XML del activity el fragment de Google Maps
+    3. Agregar al XML del activity el fragment de Google Maps
 
         ```
             <fragment
@@ -90,9 +102,9 @@ Curso de Aplicaciones Móviles 2 - Grupo 2017 02
             android:id="@+id/map"/>
         ```
 
-        4. Iniciamos el Map en la Activity
+    4. Iniciamos el Map en la Activity
 
-        ```
+    ```
              private void initMap() {
             try {
                 if (map == null)
@@ -128,10 +140,11 @@ Curso de Aplicaciones Móviles 2 - Grupo 2017 02
             }
         }
 
-        ```
+    ```
 
-Resultado
-    ![5](../images/gm5.png)
+- Resultado
+
+  <img src="../images/gm5.png" height="480">
 
 ## Referencias 
 
