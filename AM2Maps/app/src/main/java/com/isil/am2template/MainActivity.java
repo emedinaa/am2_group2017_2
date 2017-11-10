@@ -4,6 +4,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -54,19 +55,20 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
             if (map == null)
             {
                 // above API 11
-                map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+                map = ((SupportMapFragment)
+                        getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
 
                 map.getUiSettings().setAllGesturesEnabled(true);
                 map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                 map.setMyLocationEnabled(true);
                 map.getUiSettings().setZoomControlsEnabled(true);
                 //map.getUiSettings().setZoomControlsEnabled(false);
-                map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(defaultLat, defaultLng), ZOOM));
+                //map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(defaultLat, defaultLng), ZOOM));
 
-                setDefaultLocation();
+               setDefaultLocation();
 
                 //events
-                /*map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+                map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                     @Override
                     public void onMapClick(LatLng point)
                     {
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                         userLng = point.longitude;
                         Toast.makeText(MainActivity.this,"Lat & Lng "+userLat+" "+userLng,Toast.LENGTH_LONG).show();
                     }
-                });*/
+                });
 
             }
         }catch (Exception e){
@@ -96,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     //ISIL Latitud y longitud -12.0936177,-77.052195
     private void setDefaultLocation() {
 
+        final int isilZoom= 17;
         final double isilLat= -12.0936177;
         final double isilLng= -77.052195;
         if (marker != null) {
@@ -105,9 +108,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         marker = map.addMarker(new MarkerOptions()
                 .position(new LatLng(isilLat, isilLng))
                 .title("Isil San Isidro")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
 
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(isilLat, isilLng), ZOOM));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(isilLat, isilLng), isilZoom));
         //map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(isilLat, isilLng), ZOOM));
     }
 
@@ -126,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     @Override
     public void onConnected(Bundle bundle) {
         Log.i(TAG, "Location services connected.");
-        /*mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
+        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                 mGoogleApiClient);
         if (mLastLocation != null)
         {
@@ -134,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
             userLng=mLastLocation.getLongitude();
             userMarker(userLat, userLng);
             map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(userLat,userLng), ZOOM));
-        }*/
+        }
     }
 
     @Override
